@@ -1,0 +1,174 @@
+:root {
+    --clr-primary-orange: hsl(31, 77%, 52%);
+    --clr-primary-cyan: hsl(184, 100%, 22%);
+    --clr-primary-dark-cyan: hsl(179, 100%, 13%);
+
+    --clr-neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-light-gray: hsl(0, 0%, 95%);
+
+    --fs-regular: 15px;
+
+    --ff-accent: 'Lexend Deca', sans-serif;
+    --ff-base: 'Big Shoulders Display', 'sans-serif', 'cursive';
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+    7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* General styling */
+
+body {
+    background-color: var(--clr-neutral-light-gray);
+    font-size: var(--fs-regular);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    max-width: 60vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 500px) {
+    .product {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .product__sedans, .product__suvs, .product__luxury {
+        border-radius: 0 !important;
+    }
+
+    .product__sedans {
+        border-top-right-radius: 0.8rem !important;
+        border-top-left-radius: 0.8rem !important;
+    }
+    
+    .product__luxury {
+        border-bottom-right-radius: 0.8rem !important;
+        border-bottom-left-radius: 0.8rem !important;
+    }
+}
+
+.product__sedans, .product__suvs, .product__luxury {
+    padding: 2rem;
+}
+
+.product__sedans {
+ background-color: var(--clr-primary-orange);
+ border-top-left-radius: 0.8rem;
+ border-bottom-left-radius: 0.8rem;
+
+}
+
+.product__suvs {
+    background-color: var(--clr-primary-cyan);
+}
+
+.product__luxury {
+    background-color: var(--clr-primary-dark-cyan);
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+.icon {
+    margin-top: 1.7rem;
+}
+
+.product__title {
+    color: var(--clr-neutral-light-gray);
+    font-family: var(--ff-base);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 1.7rem;
+}
+
+.product__category {
+    color: var(--clr-neutral-transparent-white);
+    font-family: var(--ff-accent);
+    margin-top: 1.7rem;
+    overflow-wrap: break-word;
+}
+
+.button__sedans, .button__suvs, .button__luxury {
+    min-width: max-content;
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+    border-radius: 5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--clr-neutral-light-gray);
+    font-family: var(--ff-accent);
+    text-transform: capitalize;
+    margin: 3.4rem 0 1.7rem 0;
+}
+
+.button__sedans {
+    color: var(--clr-primary-orange);
+}
+
+.button__suvs {
+    color: var(--clr-primary-cyan);
+}
+
+.button__luxury {
+    color: var(--clr-primary-dark-cyan);
+}
+
+/*
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+*/
